@@ -1,122 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bottle Service | FirstIn Widgets</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-        }
+      tailwind.config = {
+        darkMode: "class",
+      };
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
-
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/config.js"></script>
+  </head>
+  <body
+    class="bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 min-h-screen flex flex-col"
+  >
     <header id="main-header"></header>
 
     <main class="flex-grow pt-24 pb-20">
-        <section class="max-w-7xl mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8 order-2 md:order-1">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-gradient-to-tr from-pink-500/20 to-blue-500/20 blur-2xl rounded-3xl"></div>
-                        <div class="relative glass p-8 rounded-3xl border shadow-2xl">
-                            <!-- Bottle Service Form Mockup -->
-                            <div class="space-y-6">
-                                <h3 class="text-xl font-bold text-center">Reserve a Table</h3>
-                                <div class="space-y-4">
-                                    <div>
-                                        <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Full Name</label>
-                                        <input type="text" class="w-full px-4 py-3 rounded-xl border bg-slate-50 dark:bg-slate-900 focus:ring-2 focus:ring-pink-500 focus:outline-none" placeholder="Jane Doe">
-                                    </div>
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Guests</label>
-                                            <input type="number" class="w-full px-4 py-3 rounded-xl border bg-slate-50 dark:bg-slate-900 focus:ring-2 focus:ring-pink-500 focus:outline-none" placeholder="6">
-                                        </div>
-                                        <div>
-                                            <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Area</label>
-                                            <select class="w-full px-4 py-3 rounded-xl border bg-slate-50 dark:bg-slate-900 focus:ring-2 focus:ring-pink-500 focus:outline-none">
-                                                <option>Main Floor</option>
-                                                <option>VIP Terrace</option>
-                                                <option>Exclusive Lounge</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Bottle Selection</label>
-                                        <select class="w-full px-4 py-3 rounded-xl border bg-slate-50 dark:bg-slate-900 focus:ring-2 focus:ring-pink-500 focus:outline-none">
-                                            <option>Champagne Package</option>
-                                            <option>Vodka Service</option>
-                                            <option>Premium Whiskey</option>
-                                        </select>
-                                    </div>
-                                    <button class="w-full py-4 bg-gradient-to-r from-pink-600 to-blue-600 text-white rounded-xl font-bold transform hover:scale-[1.02] transition-all shadow-lg">
-                                        Request Table
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="mb-16">
+          <h1 class="text-4xl font-extrabold mb-4">
+            Bottle Service <span class="gradient-text">Widget</span>
+          </h1>
+          <p class="text-zinc-500 max-w-2xl">
+            Transform how your guests book VIP experiences. Our bottle service
+            widget provides a high-end booking flow that matches the luxury of
+            your venue.
+          </p>
+        </div>
 
-                <div class="space-y-8 order-1 md:order-2">
-                    <h1 class="text-4xl font-extrabold mb-4">Bottle Service <span class="gradient-text">Widget</span></h1>
-                    <p class="text-slate-500 text-lg leading-relaxed">
-                        Transform how your guests book VIP experiences. Our bottle service widget provides a high-end booking flow that matches the luxury of your venue.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="mt-1 p-2 bg-pink-100 dark:bg-pink-900 rounded-lg">
-                                <i data-lucide="award" class="w-5 h-5 text-pink-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold">VIP Experience</h4>
-                                <p class="text-sm text-slate-500">Curated booking steps for premium table selections.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="mt-1 p-2 bg-blue-100 dark:bg-blue-900 rounded-lg">
-                                <i data-lucide="zap" class="w-5 h-5 text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold">Instant Confirmation</h4>
-                                <p class="text-sm text-slate-500">Automated responses to keep your VIPs engaged.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Code Snippet Section -->
-            <div class="mt-24 p-8 glass rounded-3xl border bg-slate-50/50 dark:bg-slate-900/50">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-                    <div>
-                        <h3 class="text-2xl font-bold">Integration <span class="gradient-text">Snippet</span></h3>
-                        <p class="text-slate-500 italic">Copy and paste this code into your website.</p>
-                    </div>
-                    <button class="px-6 py-2 bg-pink-600 text-white rounded-full text-sm font-bold flex items-center">
-                        <i data-lucide="copy" class="w-4 h-4 mr-2"></i> Copy Code
-                    </button>
-                </div>
-                <div class="bg-slate-900 rounded-2xl p-6 font-mono text-sm text-pink-400 overflow-x-auto">
-                    <pre><code>&lt;script src="https://cdn.firstin.com/widget.js"&gt;&lt;/script&gt;
-&lt;firstin-widget
-  type="bottle_service"
-  venue-id="YOUR_VENUE_ID"
-  theme="light" /&gt;</code></pre>
-                </div>
-            </div>
-        </section>
+        <!-- Code Snippet Section -->
+        <div>
+          <firstin-widget type="bottle_service" theme="light" height="800" />
+        </div>
+      </section>
     </main>
 
     <footer id="main-footer"></footer>
 
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/layout.js"></script>
-</body>
+  </body>
 </html>

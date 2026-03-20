@@ -30,8 +30,9 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/config.js"></script>
 </head>
-<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<body class="bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 min-h-screen flex flex-col">
 
     <header id="main-header"></header>
 
@@ -42,51 +43,50 @@
                 <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
                     Elevate Your <span class="gradient-text">Guest Experience</span>
                 </h1>
-                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-lg">
+                <p class="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-lg">
                     Seamlessly integrate premium events, guest lists, and bottle service widgets into your website with just a few lines of code.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="events.html" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/20">
+                    <a href="events.html" class="px-8 py-4 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-zinc-500/20">
                         View Widgets
                     </a>
-                    <a href="#features" class="px-8 py-4 border border-blue-600/30 hover:border-blue-600 text-blue-600 rounded-full font-bold transition-all dark:text-blue-400">
+                    <a href="#features" class="px-8 py-4 border border-zinc-900/30 hover:border-zinc-900 text-zinc-900 rounded-full font-bold transition-all dark:text-zinc-400">
                         Learn More
                     </a>
                 </div>
             </div>
             
             <div class="relative animate-in slide-in-from-right duration-1000">
-                <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 blur-3xl rounded-full"></div>
+                <div class="absolute -inset-4 bg-gradient-to-r from-zinc-500 to-black opacity-20 blur-3xl rounded-full"></div>
                 <div class="relative glass p-4 rounded-3xl animate-float shadow-2xl">
                     <!-- Widget Preview Mock -->
-                    <div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border shadow-inner">
-                        <div class="px-4 py-3 bg-slate-50 dark:bg-slate-800 border-b flex items-center justify-between">
+                    <div class="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border shadow-inner">
+                        <div class="px-4 py-3 bg-zinc-50 dark:bg-zinc-800 border-b flex items-center justify-between">
                             <span class="text-xs font-mono">widget.js snippet</span>
                             <div class="flex space-x-1">
-                                <div class="w-2 h-2 rounded-full bg-red-400"></div>
-                                <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
-                                <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                                <div class="w-2 h-2 rounded-full bg-zinc-400"></div>
+                                <div class="w-2 h-2 rounded-full bg-zinc-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-zinc-200"></div>
                             </div>
                         </div>
-                        <div class="p-6 font-mono text-sm overflow-x-auto text-blue-600 dark:text-blue-400">
-                            <pre><code>&lt;script src="firstin.js"&gt;&lt;/script&gt;
+                        <div class="p-6 font-mono text-sm overflow-x-auto text-zinc-900 dark:text-zinc-100">
+                            <pre><code>&lt;script src="assets/js/config.js"&gt;&lt;/script&gt;
 &lt;firstin-widget 
-  type="events" 
-  venue="prime-club" /&gt;</code></pre>
+  type="events" /&gt;</code></pre>
                         </div>
                     </div>
                     <div class="mt-4 flex justify-around">
                         <div class="text-center group cursor-pointer">
-                            <i data-lucide="zap" class="w-8 h-8 mx-auto mb-2 text-blue-500 group-hover:scale-110 transition-transform"></i>
-                            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Fast</p>
+                            <i data-lucide="zap" class="w-8 h-8 mx-auto mb-2 text-zinc-900 dark:text-zinc-100 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Fast</p>
                         </div>
                         <div class="text-center group cursor-pointer">
-                            <i data-lucide="shield" class="w-8 h-8 mx-auto mb-2 text-purple-500 group-hover:scale-110 transition-transform"></i>
-                            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Secure</p>
+                            <i data-lucide="shield" class="w-8 h-8 mx-auto mb-2 text-zinc-600 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Secure</p>
                         </div>
                         <div class="text-center group cursor-pointer">
-                            <i data-lucide="palette" class="w-8 h-8 mx-auto mb-2 text-pink-500 group-hover:scale-110 transition-transform"></i>
-                            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Custom</p>
+                            <i data-lucide="palette" class="w-8 h-8 mx-auto mb-2 text-zinc-400 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Custom</p>
                         </div>
                     </div>
                 </div>
@@ -94,41 +94,41 @@
         </section>
 
         <!-- Features Section -->
-        <section id="features" class="py-24 bg-slate-50 dark:bg-slate-900/50">
+        <section id="features" class="py-24 bg-zinc-50 dark:bg-zinc-900/50">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
                     <h2 class="text-4xl font-bold">Why Choose <span class="gradient-text">FirstIn</span></h2>
-                    <p class="text-slate-500">Built for high-performance venues and seamless integration.</p>
+                    <p class="text-zinc-500">Built for high-performance venues and seamless integration.</p>
                 </div>
                 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Feature 1 -->
                     <div class="p-8 rounded-3xl glass card-hover transition-all duration-300">
-                        <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6">
-                            <i data-lucide="layout" class="text-blue-600 w-8 h-8"></i>
+                        <div class="w-14 h-14 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="layout" class="text-zinc-900 dark:text-zinc-100 w-8 h-8"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Multi-Layout Design</h3>
-                        <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+                        <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed">
                             Choose between Grid, List, or Calendar views to best match your website's aesthetic and user flow.
                         </p>
                     </div>
                     <!-- Feature 2 -->
                     <div class="p-8 rounded-3xl glass card-hover transition-all duration-300">
-                        <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6">
-                            <i data-lucide="users" class="text-purple-600 w-8 h-8"></i>
+                        <div class="w-14 h-14 bg-zinc-200 dark:bg-zinc-700 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="users" class="text-zinc-900 dark:text-zinc-100 w-8 h-8"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Guest Management</h3>
-                        <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+                        <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed">
                             Integrated guest list forms that capture lead data directly into your CRM with real-time notifications.
                         </p>
                     </div>
                     <!-- Feature 3 -->
                     <div class="p-8 rounded-3xl glass card-hover transition-all duration-300">
-                        <div class="w-14 h-14 bg-pink-100 dark:bg-pink-900/30 rounded-2xl flex items-center justify-center mb-6">
-                            <i data-lucide="wine" class="text-pink-600 w-8 h-8"></i>
+                        <div class="w-14 h-14 bg-zinc-300 dark:bg-zinc-600 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="wine" class="text-zinc-900 dark:text-zinc-100 w-8 h-8"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Bottle Service</h3>
-                        <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+                        <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed">
                             Premium table booking experience with intuitive forms and dynamic pricing support.
                         </p>
                     </div>
