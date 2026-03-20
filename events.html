@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Widgets | FirstIn Widgets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+
+    <header id="main-header"></header>
+
+    <main class="flex-grow pt-24 pb-20">
+        <section class="max-w-7xl mx-auto px-6 py-12">
+            <div class="mb-16">
+                <h1 class="text-4xl font-extrabold mb-4">Event <span class="gradient-text">Widgets</span></h1>
+                <p class="text-slate-500 max-w-2xl">Showcase your events with our versatile layouts. Choose the one that fits your brand best.</p>
+            </div>
+
+            <!-- Grid Widget -->
+            <div class="mb-20">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold flex items-center"><i data-lucide="layout-grid" class="mr-3 text-blue-500"></i> Grid View</h2>
+                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 text-xs font-bold rounded-full">POPULAR</span>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Event Card 1 -->
+                    <div class="rounded-2xl overflow-hidden glass border hover:scale-105 transition-transform cursor-pointer">
+                        <div class="h-48 bg-slate-200 dark:bg-slate-800 animate-pulse relative">
+                             <img src="https://images.unsplash.com/photo-1514525253344-f814d074e015?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <span class="text-xs text-blue-500 font-bold">FRIDAY, OCT 25</span>
+                            <h3 class="font-bold text-lg">Neon Dreams Night</h3>
+                            <p class="text-sm text-slate-500">Live DJ Set & Visuals</p>
+                            <button class="w-full py-2 bg-blue-600 text-white rounded-lg text-sm font-bold">Get Tickets</button>
+                        </div>
+                    </div>
+                    <!-- Event Card 2 -->
+                    <div class="rounded-2xl overflow-hidden glass border hover:scale-105 transition-transform cursor-pointer">
+                        <div class="h-48 bg-slate-200 dark:bg-slate-800 relative">
+                             <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <span class="text-xs text-purple-500 font-bold">SATURDAY, OCT 26</span>
+                            <h3 class="font-bold text-lg">Underground Bass</h3>
+                            <p class="text-sm text-slate-500">Special Guest Artist</p>
+                            <button class="w-full py-2 bg-slate-800 text-white rounded-lg text-sm font-bold">Get Tickets</button>
+                        </div>
+                    </div>
+                    <!-- Event Card 3 -->
+                    <div class="rounded-2xl overflow-hidden glass border hover:scale-105 transition-transform cursor-pointer">
+                        <div class="h-48 bg-slate-200 dark:bg-slate-800 relative">
+                             <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <span class="text-xs text-pink-500 font-bold">SUNDAY, OCT 27</span>
+                            <h3 class="font-bold text-lg">Sunset Rooftop Session</h3>
+                            <p class="text-sm text-slate-500">Acoustic & Chillout</p>
+                            <button class="w-full py-2 bg-blue-600 text-white rounded-lg text-sm font-bold">Get Tickets</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- List Widget -->
+            <div class="mb-20">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold flex items-center"><i data-lucide="list" class="mr-3 text-purple-500"></i> List View</h2>
+                </div>
+                <div class="space-y-4">
+                    <!-- List Item 1 -->
+                    <div class="glass p-4 rounded-xl border flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors cursor-pointer">
+                        <div class="flex items-center space-x-6">
+                            <div class="text-center w-16 px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg">
+                                <span class="block text-xs uppercase font-bold text-slate-400 text-[9px]">OCT</span>
+                                <span class="block text-xl font-black">28</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Monday Jazz Lounge</h3>
+                                <p class="text-xs text-slate-500">Smooth rhythms & cocktails</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="hidden md:block text-slate-400 text-sm">Starts at 9:00 PM</span>
+                            <button class="px-6 py-2 bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold rounded-full">Book</button>
+                        </div>
+                    </div>
+                    <!-- List Item 2 -->
+                    <div class="glass p-4 rounded-xl border flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors cursor-pointer">
+                        <div class="flex items-center space-x-6">
+                            <div class="text-center w-16 px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg">
+                                <span class="block text-xs uppercase font-bold text-slate-400 text-[9px]">OCT</span>
+                                <span class="block text-xl font-black">29</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Trivia Night</h3>
+                                <p class="text-xs text-slate-500">Win exclusive prizes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="hidden md:block text-slate-400 text-sm">Starts at 8:00 PM</span>
+                            <button class="px-6 py-2 bg-blue-600 text-white text-xs font-bold rounded-full">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Widget -->
+            <div>
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold flex items-center"><i data-lucide="calendar" class="mr-3 text-pink-500"></i> Calendar View</h2>
+                </div>
+                <div class="glass rounded-3xl overflow-hidden border">
+                    <div class="p-6 bg-slate-50 dark:bg-slate-900 border-b flex items-center justify-between">
+                        <h3 class="font-bold">October 2026</h3>
+                        <div class="flex space-x-2">
+                            <button class="p-2 rounded-lg border hover:bg-white dark:hover:bg-slate-800"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                            <button class="p-2 rounded-lg border hover:bg-white dark:hover:bg-slate-800"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-7 gap-px bg-slate-200 dark:bg-slate-800">
+                        <!-- Days Header -->
+                        <div class="bg-white dark:bg-slate-950 p-4 text-center text-xs font-bold text-slate-400">SUN</div>
+                        <div class="bg-white dark:bg-slate-950 p-4 text-center text-xs font-bold text-slate-400">MON</div>
+                        <div class="bg-white dark:bg-slate-950 p-4 text-center text-xs font-bold text-slate-400">TUE</div>
+                        <div class="bg-white dark:bg-slate-950 p-4 text-center text-xs font-bold text-slate-400">WED</div>
+                        <div class="bg-white dark:bg-slate-950 p-4 text-center text-xs font-bold text-slate-400">THU</div>
+                        <div class="bg-white dark:bg-slate-950 p-4 text-center text-xs font-bold text-slate-400">FRI</div>
+                        <div class="bg-white dark:bg-slate-950 p-4 text-center text-xs font-bold text-slate-400">SAT</div>
+                        
+                        <!-- Empty cells for start of month -->
+                        <div class="bg-white dark:bg-slate-950 h-32 p-2"></div>
+                        <div class="bg-white dark:bg-slate-950 h-32 p-2"></div>
+                        <div class="bg-white dark:bg-slate-950 h-32 p-2"></div>
+                        
+                        <!-- Calendar Days -->
+                        <div class="bg-white dark:bg-slate-950 h-32 p-2 border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 cursor-pointer">
+                            <span class="text-sm font-bold opacity-30">1</span>
+                        </div>
+                        <div class="bg-white dark:bg-slate-950 h-32 p-2 relative">
+                            <span class="text-sm font-bold">2</span>
+                            <div class="mt-2 text-[10px] p-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded truncate">Late Night DJ</div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-950 h-32 p-2">
+                             <span class="text-sm font-bold">3</span>
+                        </div>
+                        <div class="bg-white dark:bg-slate-950 h-32 p-2">
+                             <span class="text-sm font-bold">4</span>
+                        </div>
+                        <!-- ... rest of days omitted for brevity in demo ... -->
+                        <div class="bg-white dark:bg-slate-950 h-32 p-2 col-span-7 flex items-center justify-center text-slate-400 italic text-sm">
+                            [ +23 more days ]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/layout.js"></script>
+</body>
+</html>

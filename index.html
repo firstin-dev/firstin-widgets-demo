@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirstIn Widgets | Premium Widget Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-in-top': 'slideInTop 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInTop: {
+                            '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+
+    <header id="main-header"></header>
+
+    <main class="flex-grow pt-24">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 animate-in slide-in-from-left duration-1000">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+                    Elevate Your <span class="gradient-text">Guest Experience</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-lg">
+                    Seamlessly integrate premium events, guest lists, and bottle service widgets into your website with just a few lines of code.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="events.html" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/20">
+                        View Widgets
+                    </a>
+                    <a href="#features" class="px-8 py-4 border border-blue-600/30 hover:border-blue-600 text-blue-600 rounded-full font-bold transition-all dark:text-blue-400">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative animate-in slide-in-from-right duration-1000">
+                <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 blur-3xl rounded-full"></div>
+                <div class="relative glass p-4 rounded-3xl animate-float shadow-2xl">
+                    <!-- Widget Preview Mock -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border shadow-inner">
+                        <div class="px-4 py-3 bg-slate-50 dark:bg-slate-800 border-b flex items-center justify-between">
+                            <span class="text-xs font-mono">widget.js snippet</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                                <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                                <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                            </div>
+                        </div>
+                        <div class="p-6 font-mono text-sm overflow-x-auto text-blue-600 dark:text-blue-400">
+                            <pre><code>&lt;script src="firstin.js"&gt;&lt;/script&gt;
+&lt;firstin-widget 
+  type="events" 
+  venue="prime-club" /&gt;</code></pre>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-around">
+                        <div class="text-center group cursor-pointer">
+                            <i data-lucide="zap" class="w-8 h-8 mx-auto mb-2 text-blue-500 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Fast</p>
+                        </div>
+                        <div class="text-center group cursor-pointer">
+                            <i data-lucide="shield" class="w-8 h-8 mx-auto mb-2 text-purple-500 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Secure</p>
+                        </div>
+                        <div class="text-center group cursor-pointer">
+                            <i data-lucide="palette" class="w-8 h-8 mx-auto mb-2 text-pink-500 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Custom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-24 bg-slate-50 dark:bg-slate-900/50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                    <h2 class="text-4xl font-bold">Why Choose <span class="gradient-text">FirstIn</span></h2>
+                    <p class="text-slate-500">Built for high-performance venues and seamless integration.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="p-8 rounded-3xl glass card-hover transition-all duration-300">
+                        <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="layout" class="text-blue-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Multi-Layout Design</h3>
+                        <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+                            Choose between Grid, List, or Calendar views to best match your website's aesthetic and user flow.
+                        </p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="p-8 rounded-3xl glass card-hover transition-all duration-300">
+                        <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="users" class="text-purple-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Guest Management</h3>
+                        <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+                            Integrated guest list forms that capture lead data directly into your CRM with real-time notifications.
+                        </p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="p-8 rounded-3xl glass card-hover transition-all duration-300">
+                        <div class="w-14 h-14 bg-pink-100 dark:bg-pink-900/30 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="wine" class="text-pink-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Bottle Service</h3>
+                        <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+                            Premium table booking experience with intuitive forms and dynamic pricing support.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/layout.js"></script>
+</body>
+</html>
