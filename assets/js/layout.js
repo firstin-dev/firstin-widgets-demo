@@ -1,10 +1,10 @@
 // Shared layout elements injection
 function renderLayout() {
-    const header = document.getElementById('main-header');
-    const footer = document.getElementById('main-footer');
+  const header = document.getElementById("main-header");
+  const footer = document.getElementById("main-footer");
 
-    if (header) {
-        header.innerHTML = `
+  if (header) {
+    header.innerHTML = `
             <nav class="fixed top-0 w-full z-50 glass px-6 py-4 flex items-center justify-between border-b transition-all duration-500">
                 <a href="index.html" class="text-2xl font-bold gradient-text tracking-tight">FirstIn Widgets</a>
                 
@@ -38,10 +38,10 @@ function renderLayout() {
                 </div>
             </div>
         `;
-    }
+  }
 
-    if (footer) {
-        footer.innerHTML = `
+  if (footer) {
+    footer.innerHTML = `
             <div class="bg-zinc-50 dark:bg-black border-t py-16 px-6">
                 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
                     <div class="col-span-1 md:col-span-1 space-y-6">
@@ -85,109 +85,117 @@ function renderLayout() {
                 </div>
             </div>
         `;
-    }
+  }
 
-    // Refresh Lucide icons after injection
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-    
-    // Initial UI update for theme
-    if (typeof updateThemeUI === 'function') {
-        updateThemeUI(getTheme());
-    }
+  // Refresh Lucide icons after injection
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
 
-    // Setup mobile menu toggle
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuBtn && mobileMenu) {
-        menuBtn.onclick = () => {
-            mobileMenu.classList.toggle('hidden');
-            document.body.classList.toggle('overflow-hidden');
-        };
-    }
+  // Initial UI update for theme
+  if (typeof updateThemeUI === "function") {
+    updateThemeUI(getTheme());
+  }
+
+  // Setup mobile menu toggle
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  if (menuBtn && mobileMenu) {
+    menuBtn.onclick = () => {
+      mobileMenu.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden");
+    };
+  }
 }
 
 function closeMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu) {
-        mobileMenu.classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
-    }
+  const mobileMenu = document.getElementById("mobile-menu");
+  if (mobileMenu) {
+    mobileMenu.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+  }
 }
 
 function cycleTheme() {
-    const current = getTheme();
-    let next = 'dark';
-    if (current === 'dark') next = 'light';
-    else if (current === 'light') next = 'system';
-    else if (current === 'system') next = 'dark';
-    
-    setTheme(next);
+  const current = getTheme();
+  let next = "dark";
+  if (current === "dark") next = "light";
+  else if (current === "light") next = "system";
+  else if (current === "system") next = "dark";
+
+  setTheme(next);
 }
 
 // Run layout on load
-document.addEventListener('DOMContentLoaded', () => {
-    renderLayout();
-    initializeWidgets();
+document.addEventListener("DOMContentLoaded", () => {
+  renderLayout();
+  initializeWidgets();
 });
 
 // FirstIn Widget Initialization
 function initializeWidgets() {
-    const config = window.FirstInConfig;
-    if (!config) {
-        console.warn('FirstInConfig not found. Please ensure assets/js/config.js is loaded.');
-        return;
+  const config = window.FirstInConfig;
+  if (!config) {
+    console.warn(
+      "FirstInConfig not found. Please ensure assets/js/config.js is loaded.",
+    );
+    return;
+  }
+
+  // 1. Inject the widget script if it's not already in the page
+  if (config.scriptURL) {
+    // Check if already injected
+    const existingScript = document.querySelector(
+      `script[src="${config.scriptURL}"]`,
+    );
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.src = config.scriptURL;
+      script.async = true;
+      document.head.appendChild(script);
     }
+  }
 
-    // 1. Inject the widget script if it's not already in the page
-    if (config.scriptURL) {
-        // Check if already injected
-        const existingScript = document.querySelector(`script[src="${config.scriptURL}"]`);
-        if (!existingScript) {
-            const script = document.createElement('script');
-            script.src = config.scriptURL;
-            script.async = true;
-            document.head.appendChild(script);
-        }
+  // 2. Set the venue-id for all firstin-widget elements if they don't have a valid one
+  const widgets = document.querySelectorAll("firstin-widget");
+  widgets.forEach((widget) => {
+    const currentVenueId = widget.getAttribute("venue-id");
+    if (
+      !currentVenueId ||
+      currentVenueId === "YOUR_VENUE_ID" ||
+      currentVenueId === ""
+    ) {
+      widget.setAttribute("venue-id", config.venueId);
     }
+  });
 
-    // 2. Set the venue-id for all firstin-widget elements if they don't have a valid one
-    const widgets = document.querySelectorAll('firstin-widget');
-    widgets.forEach(widget => {
-        const currentVenueId = widget.getAttribute('venue-id');
-        if (!currentVenueId || currentVenueId === 'YOUR_VENUE_ID' || currentVenueId === '') {
-            widget.setAttribute('venue-id', config.venueId);
-        }
+  // 3. Synchronize theme initially
+  syncWidgetTheme();
+
+  // 4. Watch for theme changes (on the <html> element class)
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === "class") {
+        syncWidgetTheme();
+      }
     });
+  });
 
-    // 3. Synchronize theme initially
-    syncWidgetTheme();
-
-    // 4. Watch for theme changes (on the <html> element class)
-    const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            if (mutation.attributeName === 'class') {
-                syncWidgetTheme();
-            }
-        });
-    });
-
-    observer.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ['class']
-    });
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
 }
 
 // Synchronize all widgets with the project's current theme
 function syncWidgetTheme() {
-    const isDark = document.documentElement.classList.contains('dark');
-    const theme = isDark ? 'dark' : 'light';
-    
-    const widgets = document.querySelectorAll('firstin-widget');
-    widgets.forEach(widget => {
-        if (widget.getAttribute('theme') !== theme) {
-            widget.setAttribute('theme', theme);
-        }
-    });
+  const isDark = document.documentElement.classList.contains("dark");
+  const theme = isDark ? "dark" : "light";
+
+  const widgets = document.querySelectorAll("firstin-widget");
+  widgets.forEach((widget) => {
+    if (widget.getAttribute("theme") !== theme) {
+      widget.setAttribute("theme", theme);
+    }
+  });
 }

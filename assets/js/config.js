@@ -4,8 +4,8 @@
  */
 window.FirstInConfig = {
   // Current widget script source
-  scriptURL: "https://dev.firstin.app/widget.js",
+  scriptURL: localStorage.getItem('firstin_scriptURL') || "https://firstin.app/widget.js",
 
   // Default Venue ID used across all widgets
-  venueId: "cmlyymeov008r01qovokrtk3e",
+  venueId: localStorage.getItem('firstin_venueId') || "cmf42piyx000lp9sbpr01wmub",
 };
